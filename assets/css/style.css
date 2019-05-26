@@ -1,10 +1,13 @@
 body {
-    background: url("../images/background.jpg");
+    
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 
 .headerimage{
-    height:280px;
+    height:430px;
     width: 100%;
 }
 
