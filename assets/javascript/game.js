@@ -19,15 +19,25 @@ $(document).ready(function() {
         var crystal=[$(".red"), $(".blue"), $(".yellow"), $(".green")];
         var button=[redBtn, blueBtn, yellowBtn, greenBtn];
         // to assign value to each crystal
-        for (var i=0; i<crystal.length; i++) {
-            crystal[i].attr("data-value", Math.floor(Math.random()*12)+2);
-        };
+        // Ensure Bootstrap wrapper does not interfere with data assignment
+        setTimeout(() => {
+            for (var i=0; i<crystal.length; i++) {
+                crystal[i].attr("data-value",Math.floor(Math.random()*12)+2);
+            }
+            console.log("Crystals assigned values:", 
+                crystal[0].attr("data-value"), 
+                crystal[1].attr("data-value"), 
+                crystal[2].attr("data-value"), 
+                crystal[3].attr("data-value")
+            );
+        }, 50); // Short delay to ensure proper assignment
         // to print out target number and score on screen
         $("#targetNumber").html(targetNumber);
         $("#wins").html(wins);
         $("#loss").html(loss);
         $("#score").html(score);
     }
+
     initialize();
     
     console.log(redValue +"<br>"+blueValue+"<br>"+yellowValue+"<br>"+greenValue);
@@ -46,10 +56,13 @@ $(document).ready(function() {
     });
 
     // Wait for user interaction to start the background music
-    document.getElementById("start-game").addEventListener("click", function () {
-        let audio = document.getElementById("background-music");
-        audio.play();
-        document.getElementById("start-game").style.display = "none"; // Hide button after clicking
-    });
+    // Ensure music function runs after everything is ready
+    setTimeout(() => {
+        document.getElementById("start-game").addEventListener("click", function () {
+            let audio = document.getElementById("background-music");
+            audio.play();
+            document.getElementById("start-game").style.display = "none"; // Hide button after clicking
+        });
+    }, 100); // Slight delay to avoid interference
 
 });
