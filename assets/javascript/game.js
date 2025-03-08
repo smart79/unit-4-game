@@ -44,4 +44,12 @@ $(document).ready(function() {
             initialize();
         }
     });
+
+    // Wait for user interaction to start the background music
+    document.getElementById("start-game").addEventListener("click", function () {
+        let audio = document.getElementById("background-music");
+        audio.play();
+        document.getElementById("start-game").style.display = "none"; // Hide button after clicking
     });
+
+});
