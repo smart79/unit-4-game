@@ -23,46 +23,43 @@
         Your browser does not support the audio tag.
       </audio>
 
-      <button id="start-game" class="btn btn-primary">Start Game</button>
+      <div class="card">
+        <img class="headerimage card-img-top border"  src="assets/images/header.png" alt="Crystal Colloector Logo">
+        <div class="card-body">
+            <p class="card-text">You will be given a random number at the start of the game.</p>
+            <p class="card-text">There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+            <p class="card-text">You win the game by matching your total score to random number. If your total score goes above the random number you lose.</p>
+            <p class="card-text">The value of each crystal is hidden from you until you click it and values are different each game.</p>
+            <p class="card-text">Each time when the game starts, the game will change the values of each crystal.</p>
 
-      <div class="container">
-        <div class="card mx-auto">
-            <img class="headerimage card-img-top border img-fluid"  src="assets/images/header.png" alt="Crystal Collector Logo">
-            <div class="card-body text-center">
-                <p class="card-text">You will be given a random number at the start of the game.</p>
-                <p class="card-text">There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-                <p class="card-text">You win the game by matching your total score to random number. If your total score goes above the random number you lose.</p>
-                <p class="card-text">The value of each crystal is hidden from you until you click it and values are different each game.</p>
-                <p class="card-text">Each time when the game starts, the game will change the values of each crystal.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <div id="targetNumber" class="numberContainer"></div>
-                    <div id="counter" class="numberContainer">
-                        <h5>Wins: <span id="wins"></span></h5>
-                        <br>
-                        <h5>Loss: <span id="loss"></span></h5>
-                    </div>
-                </li>
-                <li class="list-group-item crystalContainer d-flex justify-content-center flex-wrap">
-                    <button class="crystal-btn m-2"><img src="assets/images/green.png" class="crystal rounded" data-value="0" alt="green"></button>
-                    <button class="crystal-btn m-2"><img src="assets/images/blue.png" class="crystal rounded" data-value="0" alt="blue"></button>
-                    <button class="crystal-btn m-2"><img src="assets/images/yellow.png" class="crystal rounded" data-value="0" alt="yellow"></button>
-                    <button class="crystal-btn m-2"><img src="assets/images/red.png" class="crystal rounded" data-value="0" alt="red"></button>
-                </li>
-                
-
-                <li class="list-group-item">Your Total Score is:</li>
-                <li>
-                    <div id="score" class="p-3 mb-2 bg-info text-white text-center"></div>  
-                </li>
-            </ul>
-            <div class="card-body"></div>
         </div>
-      </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js"></script>
-  </body>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div id="targetNumber" class="numberContainer float-left"></div>
+                <div id="counter" class="numberContainer float-right">
+                    <h5>Wins: <span id="wins"></span></h5>
+                    <br>
+                    <h5>Loss: <span id="loss"></span></h5>
+                </div>
+            </li>
+            <li class="list-group-item crystalContainer">
+                <img src="assets/images/green.png" class="crystal rounded float-left green" alt="green">
+                <img src="assets/images/blue.png" class="crystal rounded float-left blue" alt="blue">                                   
+                <img src="assets/images/yellow.png" class="crystal rounded float-left yellow" alt="yellow">
+                <img src="assets/images/red.png" class="crystal rounded float-left red" alt="red">
+            </li>
+            <li class="list-group-item test">Your Total Score is: </li>
+            <li>
+                <div id="score" class="p-3 mb-2 bg-info text-white"></div>  
+            </li>
+        </ul>
+        <div class="card-body">
+            
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="assets/javascript/game.js"></script>
+</body>
 </html>
 
    
