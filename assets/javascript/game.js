@@ -44,4 +44,11 @@ $(document).ready(function() {
             initialize();
         }
     });
+    
+    document.getElementById("start-game").addEventListener("click", function () {
+        let audio = document.getElementById("background-music");
+        audio.play();
+        document.getElementById("start-game").style.display = "none"; // Hide button after clicking
+    });
+    
 });
