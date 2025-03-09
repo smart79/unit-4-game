@@ -20,7 +20,7 @@ $(document).ready(function() {
         var button=[redBtn, blueBtn, yellowBtn, greenBtn];
         // to assign value to each crystal
         for (var i=0; i<crystal.length; i++) {
-            button[i]=crystal[i].attr("data-chicken", Math.floor(Math.random()*12)+2);
+            button[i]=crystal[i].attr("data-value", Math.floor(Math.random()*12)+2);
         };
         // to print out target number and score on screen
         $("#targetNumber").html(targetNumber);
@@ -33,7 +33,7 @@ $(document).ready(function() {
     console.log(redValue +"<br>"+blueValue+"<br>"+yellowValue+"<br>"+greenValue);
     
     $(".crystal").on("click", function(){
-        score += parseInt($(this).attr("data-chicken"));
+        score += parseInt($(this).attr("data-value"));
         $("#score").html(score);
         if(score == targetNumber) {
             wins++;
@@ -44,4 +44,4 @@ $(document).ready(function() {
             initialize();
         }
     });
- });
+});
