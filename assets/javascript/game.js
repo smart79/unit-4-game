@@ -33,7 +33,15 @@ $(document).ready(function() {
     console.log(redValue +"<br>"+blueValue+"<br>"+yellowValue+"<br>"+greenValue);
     
     $(".crystal").on("click", function(){
+        let audio = document.getElementById("background-music");
+
+        // Play music when clicking a crystal, only if it's not already playing
+        if (audio.paused) {
+            audio.play();
+        }
+
         score += parseInt($(this).attr("data-value"));
+        
         $("#score").html(score);
         if(score == targetNumber) {
             wins++;
@@ -43,12 +51,6 @@ $(document).ready(function() {
             loss++;
             initialize();
         }
-    });
-    
-    document.getElementById("start-game").addEventListener("click", function () {
-        let audio = document.getElementById("background-music");
-        audio.play();
-        document.getElementById("start-game").style.display = "none"; // Hide button after clicking
     });
     
 });
